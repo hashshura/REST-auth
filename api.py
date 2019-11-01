@@ -97,6 +97,12 @@ def get_resource():
     return jsonify({'data': 'Hello, %s!' % g.user.username})
 
 
+@app.route('/api/hello')
+def hello():
+    all_args = request.args.to_dict()
+    return jsonify(all_args)
+
+
 if __name__ == '__main__':
     if not os.path.exists('db.sqlite'):
         db.create_all()
