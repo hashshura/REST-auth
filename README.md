@@ -18,6 +18,11 @@ Then from a different terminal window you can send requests.
 API Documentation
 -----------------
 
+- GET **/api/hello**
+
+    Example implementation of an endpoint.<br>
+    Returns query parameters as json.<br>
+
 - POST **/api/users**
 
     Register a new user.<br>
@@ -120,13 +125,3 @@ And now during the token validity period there is no need to send username and p
 Once the token expires it cannot be used anymore and the client needs to request a new one. Note that in this last example the password is arbitrarily set to `x`, since the password isn't used for token authentication.
 
 An interesting side effect of this implementation is that it is possible to use an unexpired token as authentication to request a new token that extends the expiration time. This effectively allows the client to change from one token to the next and never need to send username and password after the initial token was obtained.
-
-Change Log
-----------
-
-**v0.3** - Return token duration.
-
-**v0.2** - Return a 201 status code and Location header from */api/users* endpoint.
-
-**v0.1** - Initial release.
-
