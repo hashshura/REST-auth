@@ -100,7 +100,9 @@ def get_resource():
 @app.route('/api/hello')
 def hello():
     all_args = request.args.to_dict()
-    return jsonify(all_args)
+    return jsonify({
+		'query_parameters': all_args,
+	})
 
 
 if __name__ == '__main__':
